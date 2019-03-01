@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Viewbb";
+    Layout = "~/Views/Shared/_LayoutHelper.cshtml";
+}
+
+<h2>Viewbb</h2>
+<ul>
+    @foreach (var student in ViewBag.Student)
+    {
+    <li>@student</li>
+    }
+</ul>
+
+<ul>
+  @foreach (var student in ViewBag.Student)
+    { 
+    <li>@student</li>
+    }
+</ul>

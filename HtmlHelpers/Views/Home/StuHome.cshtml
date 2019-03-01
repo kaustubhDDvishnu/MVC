@@ -1,0 +1,94 @@
+﻿@model HtmlHelpers.Models.Student
+@{
+    ViewBag.Title = "StuHome";
+    Layout = "~/Views/Shared/_LayoutHelper.cshtml";
+}
+<html>
+<body>
+    <h2>Student Registration Form</h2>
+    <table>
+
+        <tr>
+            <td>
+                @*@Html.Label("Enter First Name:")*@
+                @Html.LabelFor(m => m.FirstName)
+            </td>
+            <td>
+                @*@Html.TextBox("FirstName", " ")*@
+                @Html.TextBoxFor(m => m.FirstName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.LastName)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.LastName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Age)
+            </td>
+            <td>
+                @Html.TextBoxFor(m => m.Age)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Gender)
+            </td>
+            <td>
+                <label> @Html.RadioButtonFor(m => m.Gender, true)Male</label>
+                <label> @Html.RadioButtonFor(m => m.Gender, false)Female</label>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m=>m.State)
+            </td>
+            <td>
+                @Html.DropDownListFor(m => m.State, new List<SelectListItem>
+                {
+                new SelectListItem{Text="Maharashtra",Value="1"},
+                new SelectListItem{Text="Goa",Value="2"},
+                new SelectListItem{Text="Gujrat",Value="3"},
+                new SelectListItem{Text="Telangana",Value="4"},
+
+                })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.City)
+            </td>
+            <td>
+                @Html.DropDownListFor(m => m.City, new List<SelectListItem>
+                {
+                new SelectListItem{Text="Mumbai",Value="1"},
+                new SelectListItem{Text="Pune",Value="2"},
+                new SelectListItem{Text="Hyderabad",Value="3"},
+                new SelectListItem{Text="Delhi",Value="4"},
+
+                })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Address)
+            </td>
+            <td>
+                @Html.EditorFor(m => m.Address)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" name="Submit" value="Save Data" />
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>

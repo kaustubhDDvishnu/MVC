@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+</head>
+<body>
+    <table border="1" style="width:1290px; height:650px; font-family:Arial">
+        <tr>
+            <td colspan="2" style="text-align:center">
+                <h3>MVC Website Header</h3>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:200px; height:500px">
+                <h3>@Html.Partial("Menu")</h3>
+            </td>
+            <td style="width:600px;height:100px">
+                @RenderBody()
+             </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;font-size:x-small">
+                <h3>MVC Training Session</h3>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
